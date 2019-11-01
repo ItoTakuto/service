@@ -1,7 +1,7 @@
 from flask import Flask, g
 import sqlite3
 
-app = Flask(__name__)
+app = Survice(__name__)
 DATABASE = 'db/user.db'
 
 def init_db():
