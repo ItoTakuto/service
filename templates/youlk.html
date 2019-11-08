@@ -158,21 +158,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">youlk</a>
+      <a class="navbar-brand" href="{{url_for('youlk')}}">youlk</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="プロフィール.html">プロフィール</a></li>
-        <li><a href="トーク.html">トーク</a></li>
-        <li><a href="友達リスト.html">友達リスト</a></li>
-        <li><a href="写真.html">写真</a></li>
+        <li><a class="navbar-brand" href="{{url_for('profile')}}">プロフィール</a></li>
+        <li><a class="navbar-brand" href="talk.html">トーク</a></li>
+        <li><a class="navbar-brand" href="friend_list.html">友達リスト</a></li>
+        <li><a class="navbar-brand" href="picture.html">写真</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">はじめる
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="会員登録.html">新規登録</a></li>
-            <li><a href="ログイン画面.html">ログイン</a></li>
-            <li><a href="ログアウト画面.html">ログアウト</a></li>
+            <li><a href="{{url_for('register')}}">新規登録</a></li>
+            <li><a href="{{url_for('login_menu')}}">ログイン</a></li>
+            <li><a href="{{url_for('logout_menu')}}">ログアウト</a></li>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
@@ -230,7 +230,7 @@
 </div>
 
 <!-- Container (The Band Section) -->
-<div id="band" class="container text-center">
+<div id="youlk" class="container text-center">
   <h3>youlkでは</h3>
   <p><em>趣味を共有しましょう</em></p>
   <p>あなたの今日の出来事、趣味などについて話し合い、世界を広げましょう</p>
@@ -278,7 +278,7 @@
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="トップに戻る">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-  <p> <a href="youlk.html" data-toggle="tooltip" >youlk</a></p>
+  <p> <a href="{{url_for('youlk')}}" data-toggle="tooltip" >youlk</a></p>
 </footer>
 
 <script>

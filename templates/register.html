@@ -1,0 +1,96 @@
+{% extends "first.html" %}
+{% block body%}
+  <h1>ようこそ、新規会員さん</h1>
+  <br>
+  <h4>ここでプロフィール登録をお願いします</h4>
+  <h4>　※　が付いている項目は必須項目です<h4>
+  <br>
+    <div class="border col-12">
+        <br>
+        <h2>会員データ登録</h2>
+        <br>
+        <div class="row">
+            <div class="col-md">
+                <form action="{{url_for('register')}}" method="post">
+                  <br>
+                    <div class="form-group">
+
+                        <label>※性別：</label>
+                        <select name= "gender" class="form-control"disabled required>
+                            <option>男性</option>
+                            <option>女性</option>
+                            <option>非公開</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>※氏名 　　　ex : 江戸川乱歩　</label>
+                        <input name="name" type="name" class="form-control" placeholder="ここにお名前を入力してください" required>
+                    </div>
+                    <div class="form-group">
+                        <label>※ニックネーム 　　　ex : エド　</label>
+                        <input name="nickname" type="name" class="form-control" placeholder="ここにニックネームを入力してください" required>
+                    </div>
+                    <div class="form-group">
+                        <label>※年齢：</label>
+                        <select name="age" class="form-control" required>
+                            <option>〜10</option>
+                            <option>10〜</option>
+                            <option>20〜</option>
+                            <option>30〜</option>
+                            <option>40〜</option>
+                            <option>50〜</option>
+                            <option>60〜</option>
+                            <option>非公開</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>※職業：</label>
+                        <select name="job" class="form-control" required>
+                            <option>会社員</option>
+                            <option>公務員</option>
+                            <option>アーティスト</option>
+                            <option>スポーツ選手</option>
+                            <option>アルバイト</option>
+                            <option>学生</option>
+                            <option>専業主婦</option>
+                            <option>フリーター</option>
+                            <option>その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>住所　　ex  東京都港区北青山2-1-19</label>
+                        <input name="address"type="text" class="form-control" placeholder="ここに住所を入力してください">
+                    </div>
+                    <div class="form-group">
+                        <label>※メールアドレス 　　　ex : abcde@goohoo.xyz　</label>
+                        <input name="email" type="text" class="form-control" placeholder="ここにメールアドレスを入力してください" required >
+                    </div>
+                    <div class="form-group">
+                        <label>※電話番号：</label>
+                        <input name="telephone_number"type="text" class="form-control" placeholder="012-3456-7890"required>
+                    </div>
+                    <div class="form-group">
+                      <label>※パスワード：</label>
+                      <input name="password1"type="password" class="form-control" placeholder="8文字以上の英字・数字を入力してください" required>
+                      <br>
+                      <input name="password2" type="password" class="form-control" placeholder="再確認のため、もう一度入力してください" required>
+                    </div>
+                    <br>
+                    <h5> ※のマークは必須項目です　</h5>
+                    <br>
+
+            </div>
+            </div>
+            <div class="row center-block text-center">
+              <div class="col-12">
+                <button type="submit" class="btn btn-outline-primary btn-block">新規登録</button>
+              </div>
+            </div>
+          </form>
+        <br>
+
+    </div>
+
+    </div>
+    {%endblock%}

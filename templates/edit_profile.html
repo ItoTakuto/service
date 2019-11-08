@@ -1,0 +1,98 @@
+{% extends "first.html" %}
+{% block body%}
+      <div class="container" >
+        <form action="{{url_for('update', userid=session['userid'])}}" method="post">
+        <div class="row">
+      <div class="col-1" id="column1">項目1</div>
+      <div class="col-1" id="column2">項目2</div>
+      <div class="col-6" id="column3">項目3</div>
+      <div class="col-4" id="column4">項目4</div>
+    </div>
+        <h1>プロフィール</h1>
+        <div class="row">
+          <div class="col-1">
+          </div>
+          <div class="col-5" >
+          <form action="{{url_for('update', userid=session['userid'])}}" method="post">
+            <input name="nickname" type="name" class="form-control" placeholder='{{user["nickname"]}}'>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-1"></div>
+
+          <div class="col-5">
+            <img src="IMG_4500.PNG" alt="profile_picture" style="width:256px;height:256px">
+          </div>
+
+          <div class="col-6" style="background-color:lightgreen;">
+
+              comment：<br>
+              <textarea name="comment" rows="12" cols="60" placeholder="ここに趣味やコメントを入力してみましょう!"></textarea><br>
+              <div class="form-group">
+
+                <label>性別：</label>
+                  <h5>{{session['gender']}}</h5>
+              </div>
+              <div class="form-group">
+                  <label>氏名 　</label>
+                  <h5>{{session['name']}}"</h5>
+              </div>
+
+              <div class="form-group">
+                  <label>年齢：</label>
+                  <select name="age" class="form-control" required>
+                      <option>〜10</option>
+                      <option>10〜</option>
+                      <option>20〜</option>
+                      <option>30〜</option>
+                      <option>40〜</option>
+                      <option>50〜</option>
+                      <option>60〜</option>
+                      <option>非公開</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label>職業：</label>
+                  <select name="job" class="form-control" required>
+                      <option>会社員</option>
+                      <option>公務員</option>
+                      <option>アーティスト</option>
+                      <option>スポーツ選手</option>
+                      <option>アルバイト</option>
+                      <option>学生</option>
+                      <option>専業主婦</option>
+                      <option>フリーター</option>
+                      <option>その他</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label>住所　</label>
+                <input name="address"type="text" class="form-control" placeholder="{{session['address']}}">
+              </div>
+              <div class="form-group">
+                  <label>メールアドレス </label>
+                    <input name="email" type="text" class="form-control" placeholder="{{session['email']}}" >
+              </div>
+              <div class="form-group">
+                  <label>電話番号：</label>
+                  <input name="telephone_number"type="text" class="form-control" placeholder="{{session['telephone_number']}}">
+              </div>
+              <div class="form-group">
+                <label>パスワード：</label>
+                <input name="password1"type="password" class="form-control" placeholder="8文字以上の英字・数字を入力してください" required>
+                <br>
+                <input name="password2" type="password" class="form-control" placeholder="再確認のため、もう一度入力してください" required>
+          </div>
+        </div>
+        <br>
+        <div class="row center-block text-center">
+          <div class="col-12">
+            <button a href="{{url_for('profile', userid=session['userid'])}} type="submit" class="btn btn-outline-primary btn-block">保存する</button>
+          </div>
+        </div>
+            </form>
+        </div>
+
+{%endblock%}
